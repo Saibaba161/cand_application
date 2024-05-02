@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import GroupedSelect from '../components/searchlists';
+import { Card, CardContent, Typography } from '@mui/material';
 
 const UseFetchingData = () => {
 
@@ -40,18 +41,26 @@ const UseFetchingData = () => {
   return (
     <div className='job-details-container'>
     
-    <h1>Connected to the API</h1>
+        <h1>Connected to the API</h1>
 
-    <div className='search-and-select'>
-        <GroupedSelect />
-    </div>
-
-    {data.map(job => (
-        <div className='job-details'>
-        <h2>job.jdLink</h2>
-        <p>{job.jobDetailsFromCompany}</p>
+        <div className='search-and-select'>
+            <GroupedSelect />
         </div>
-    ))}
+
+        <div className='job-details'>
+        {data.map(job => (
+            <Card key={job.jdUid} sx={{maxWidth: 175, marginBottom: '10px'}}>
+                <CardContent>
+                    <Typography variant="h5" component="div">
+                        {job.jdLink}
+                    </Typography>
+                    <Typography color="text.secondary">
+                        {job.jobDetailsFromCompany}
+                    </Typography>
+                </CardContent>
+            </Card>
+        ))}
+        </div>
     </div>
   );
 };
