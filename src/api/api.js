@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import GroupedSelect from '../components/searchlists';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Button, Card, CardContent, Grid, Typography } from '@mui/material';
 
 const UseFetchingData = () => {
 
     const [data, setData] = useState([]);
+    const [showMore, setShowMore] = useState([]);
 
     useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +39,12 @@ const UseFetchingData = () => {
     fetchData();
   }, []); // Empty dependency array to ensure the effect runs only once on component mount
 
+  const handleShowMore = (index) => {
+    const newShowMore = [...showMore];
+    newShowMore[index] = !newShowMore[index];
+    setShowMore(newShowMore);
+  }
+
   return (
     <div className='job-details-container'>
     
@@ -47,21 +54,28 @@ const UseFetchingData = () => {
             <GroupedSelect />
         </div>
 
-        <div className='job-details'>
-        {data.map(job => (
-            <Card key={job.jdUid} sx={{maxWidth: 175, marginBottom: '10px'}}>
-                <CardContent>
-                    <Typography variant="h5" component="div">
-                        {job.jdLink}
-                    </Typography>
-                    <Typography color="text.secondary">
-                        {job.jobDetailsFromCompany}
-                    </Typography>
-                </CardContent>
-            </Card>
+        <Grid container spacing={2}>
+
+        {data.map((job, index) => (
+            <Grid item xs={12} sm={6} md={4} key={job.jdUid}>
+                <Card sx={{ minWidth: 200, marginBottom: '10px'}}>
+                    <CardContent style={{ height: showMore[index] ? 'auto': '100px', overflow: 'hidden'}}>
+                        <Typography variant="h5" component="div">
+                            {job.jdLink}
+                        </Typography>
+                        <Typography color="text.secondary" sx={{ marginTop: '10px' }}>
+                                    {job.jobDetailsFromCompany}
+                        </Typography>        
+                    </CardContent>
+                    <Button onClick={() => handleShowMore(index)} size="small">
+                        {showMore[index] ? 'Show less' : 'Show More'}
+                    </Button>
+                </Card>
+            </Grid>
         ))}
-        </div>
-    </div>
+    </Grid>
+</div>
+
   );
 };
 
