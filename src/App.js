@@ -1,14 +1,14 @@
-import SelectGrouping from "./components/selectlists";
-import FreeSolo from "./components/searchbar";
+//import SelectGrouping from "./components/searchlists";
+
+import UseFetchingData from "./api/api";
 
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome</h1>
+
       <div className="components">
-      <SelectGrouping />
-      <FreeSolo className="FreeSolo" />
+      <UseFetchingData />
       </div>
     </div>
   );

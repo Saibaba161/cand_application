@@ -4,13 +4,15 @@ import MenuItem from '@mui/material/MenuItem';
 import ListSubheader from '@mui/material/ListSubheader';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+import Autocomplete from '@mui/material/Autocomplete';
 
 
 
 export default function GroupedSelect() {
   return (
-    <div>
+    <div className='list_search'>
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel htmlFor="grouped-select">Roles</InputLabel>
         <Select defaultValue="" id="grouped-select" label="Grouping">
@@ -135,7 +137,28 @@ export default function GroupedSelect() {
           
         </Select>
         </FormControl>
+        
+        <Stack spacing={2} sx={{ width: 300, marginLeft: '10px' }}>
 
+          <Autocomplete
+            freeSolo
+            id="free-solo-2-demo"
+            disableClearable
+            options={[]}
+            
+  
+            renderInput={(params) => (
+            <TextField
+                {...params}
+                label="Search input"
+                InputProps={{
+                ...params.InputProps,
+                type: 'search',
+                }}
+            />
+            )}
+          />
+        </Stack>
     </div>
   );
 }

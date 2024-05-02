@@ -15,6 +15,33 @@ code {
 
 .components {
   display: flex;
-  align-items:center;
+  align-items: center;
   gap: 10px;
+  
+}
+
+.list_search {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list_search > * {
+  margin-right: 20px;
+}
+
+#free-solo-2-demo {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 4px;
+}
+
+.job-details-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.job-details{
+  margin-bottom: 20px;
 }
