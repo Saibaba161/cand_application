@@ -7,9 +7,9 @@
 
 .list_search {
   display: flex;
-  justify-content: space-between; /* Adjust as needed */
+  justify-content: space-between; 
   align-items: center;
-  margin-bottom: 20px; /* Add margin to create space below the search components */
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -35,10 +35,8 @@
 }
 
 .job-details-button {
-  /* Center the button */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Prevent color change on hover */
   pointer-events: none;
 }
