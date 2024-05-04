@@ -13,7 +13,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 export default function GroupedSelect() {
   return (
     <div className='list_search'>
-      <FormControl sx={{ m: 1, minWidth: 120, fontFamily:'Poppins' }}>
+      <FormControl sx={{ m: 1, minWidth: 120, fontFamily:'Poppins' }} size='small'>
         <InputLabel htmlFor="grouped-select">Roles</InputLabel>
         <Select defaultValue="" id="grouped-select" label="Grouping">
           
@@ -76,7 +76,7 @@ export default function GroupedSelect() {
         </Select>
       </FormControl>
 
-      <FormControl sx={{ m: 1, minWidth: 200, fontFamily: 'Poppins'}}>
+      <FormControl sx={{ m: 1, minWidth: 200, fontFamily: 'Poppins'}} size='small'>
         <InputLabel htmlFor="grouped-select">No. of Employees</InputLabel>
         <Select defaultValue="" id="grouped-select" label="Grouping">
           
@@ -92,7 +92,7 @@ export default function GroupedSelect() {
         </Select>
         </FormControl>
 
-        <FormControl sx={{ m: 1, minWidth: 180, fontFamily: 'Poppins' }}>
+        <FormControl sx={{ m: 1, minWidth: 180, fontFamily: 'Poppins' }} size='small'>
         <InputLabel htmlFor="grouped-select">Experience</InputLabel>
         <Select defaultValue="" id="grouped-select" label="Grouping">
           
@@ -111,7 +111,7 @@ export default function GroupedSelect() {
         </Select>
         </FormControl>
 
-        <FormControl sx={{ m: 1, minWidth: 120, fontFamily: 'Poppins' }}>
+        <FormControl sx={{ m: 1, minWidth: 120, fontFamily: 'Poppins' }} size='small'>
         <InputLabel htmlFor="grouped-select">Remote</InputLabel>
         <Select defaultValue="" id="grouped-select" label="Grouping">
           
@@ -122,7 +122,7 @@ export default function GroupedSelect() {
         </Select>
         </FormControl>
 
-        <FormControl sx={{ m: 1, minWidth: 250, fontFamily: 'Poppins' }}>
+        <FormControl sx={{ m: 1, minWidth: 250, fontFamily: 'Poppins' }} size='small'>
         <InputLabel htmlFor="grouped-select">Minimum Base Pay Salary</InputLabel>
         <Select defaultValue="" id="grouped-select" label="Grouping">
           
@@ -138,19 +138,20 @@ export default function GroupedSelect() {
         </Select>
         </FormControl>
         
-        <Stack spacing={2} sx={{ width: 300, marginLeft: '10px', fontFamily: 'Poppins' }}>
+        <Stack spacing={1} sx={{ marginLeft: '10px', fontFamily: 'Poppins' }}>
 
           <Autocomplete
             freeSolo
             id="free-solo-2-demo"
             disableClearable
             options={[]}
+            size='small'
             
   
             renderInput={(params) => (
             <TextField
                 {...params}
-                label="Search input"
+                label="Search Company Name"
                 InputProps={{
                 ...params.InputProps,
                 type: 'search',
